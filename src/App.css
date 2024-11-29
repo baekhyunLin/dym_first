@@ -43,3 +43,12 @@
   color: #007bff;
   cursor: pointer;
 }
+@media (max-width: 600px) {
+  .calendar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reminder {
+    width: 90%;
+  }
+}

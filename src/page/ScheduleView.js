@@ -9,14 +9,15 @@ const ScheduleView = () => {
   const [title, setTitle] = useState("");
   const [dateTime, setDateTime] = useState("");
   const { reminders, dismissReminder } = useReminder(schedules);
-
+  const [frequency, setFrequency] = useState("none"); // 默认为不重复
   const addSchedule = () => {
     dispatch({
       type: "ADD_SCHEDULE",
-      payload: { id: Date.now(), title, dateTime },
+      payload: { id: Date.now(), title, dateTime, frequency },
     });
     setTitle("");
     setDateTime("");
+    setFrequency("none");
   };
 
   return (
